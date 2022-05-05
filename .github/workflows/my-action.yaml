@@ -18,5 +18,7 @@ jobs:
         with:
           node-version: '14' # chosen arbitrarily
       - name: Run script to create zip files
-        run: ./.github/scripts/create-artefacts.sh
+        run: |
+          chmod +x ./.github/scripts/create-artefacts.sh
+          ./.github/scripts/create-artefacts.sh
         shell: bash
