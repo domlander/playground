@@ -5,7 +5,6 @@ name: AWS Commercial Canary
 on:
   push:
     branches: [ main ]
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -18,5 +17,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '14' # chosen arbitrarily
-      - run: ./.github/create-artefacts.sh
+      - name: Run script to create zip files
+        run: ./.github/scripts/create-artefacts.sh
         shell: bash
